@@ -32,6 +32,6 @@ interface f_interface(input clk, reset);
   endclocking
   
   modport d_mp (input clk, reset, clocking d_cb);
-  modport m_mp (input clk, reset, clocking m_cb_in);
-  modport m_mp (input clk, reset, clocking m_cb_out);
+  modport m_mp_in (input clk, reset, clocking m_cb_in);
+  modport m_mp_out (input clk, reset, clocking m_cb_out);
   endinterface
