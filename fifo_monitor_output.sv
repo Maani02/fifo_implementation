@@ -24,7 +24,10 @@ class f_monitor_op extends uvm_monitor;
         item_got.o_rdata = vif.m_mp_out.m_cb_out.o_rdata;
         item_got.o_alm_full =vif.m_mp_out.m_cb_out.o_alm_full;
         item_got.o_alm_empty =vif.m_mp_out.m_cb_out.o_alm_empty;
-        item_got.o_full =vif.m_mp_out.m_cb_out.o_full;;
+        item_got.o_full =vif.m_mp_out.m_cb_out.o_full;
         item_got.o_empty =vif.m_mp_out.m_cb_out.o_empty;
         item_got_port.write(item_got);
       end
+    end
+  endtask
+endclass
