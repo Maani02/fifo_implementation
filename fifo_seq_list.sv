@@ -18,7 +18,7 @@ class f_sequence_item extends uvm_sequence_item;
   `uvm_field_int(o_alm_empty, UVM_ALL_ON)
   `uvm_field_int(o_rdata, UVM_ALL_ON)
   `uvm_object_utils_end
-  constraint wr_rd2 {wr != rd;}
+  constraint wr_rd2 {i_wren != i_rden;}
   
   function new(string name = "f_sequence_item");
     super.new(name);
