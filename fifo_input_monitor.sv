@@ -16,4 +16,11 @@ class f_monitor_ip extends uvm_monitor;
       `uvm_fatal("Monitor: ", "No vif is found!")
   endfunction
 
-      
+    virtual task run_phase(uvm_phase phase);
+    forever begin
+      @(posedge vif.m_mp.clk)
+      if((vif.m_mp.m_cb.wr == 0) && (vif.)begin
+        $display("\nWR is high");
+        item_got.data_in = vif.m_mp.m_cb.data_in;
+        item_got.wr = 'b1;
+        item_got.rd = 'b0;  
