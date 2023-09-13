@@ -18,7 +18,7 @@ class f_monitor_op extends uvm_monitor;
 
   virtual task run_phase(uvm_phase phase);
     forever begin
-      @(posedge vif.m_mp.clk)
+      @(posedge vif.m_mp_out.clk)
       begin
         $display("\nWR is high");
         item_got.o_rdata = vif.m_mp_out.m_cb_out.o_rdata;
