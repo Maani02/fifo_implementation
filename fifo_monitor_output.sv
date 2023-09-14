@@ -1,12 +1,12 @@
 class f_monitor_op extends uvm_monitor;
   virtual f_interface vif;
   f_sequence_item item_got;
-  uvm_analysis_port#(f_sequence_item) item_got_port;
+  uvm_analysis_port#(f_sequence_item) item_got_port2;
   `uvm_component_utils(f_monitor_op)
   
   function new(string name = "f_monitor_op", uvm_component parent);
     super.new(name, parent);
-    item_got_port = new("item_got_port", this);
+    item_got_port2 = new("item_got_port2", this);
   endfunction
   
   virtual function void build_phase(uvm_phase phase);
@@ -26,7 +26,7 @@ class f_monitor_op extends uvm_monitor;
         item_got.o_alm_empty =vif.m_mp_out.m_cb_out.o_alm_empty;
         item_got.o_full =vif.m_mp_out.m_cb_out.o_full;
         item_got.o_empty =vif.m_mp_out.m_cb_out.o_empty;
-        item_got_port.write(item_got);
+        item_got_port2.write(item_got);
       end
     end
   endtask
