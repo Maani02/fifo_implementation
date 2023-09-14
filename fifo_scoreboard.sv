@@ -1,11 +1,12 @@
 class f_scoreboard extends uvm_scoreboard;
-  uvm_analysis_imp#(f_sequence_item, f_scoreboard) item_got_export;
-  uvm_analysis_imp#(f_sequence_item, f_scoreboard) item_got_export;
+  uvm_analysis_imp#(f_sequence_item, f_scoreboard) item_got_export1;
+  uvm_analysis_imp#(f_sequence_item, f_scoreboard) item_got_export2;
   `uvm_component_utils(f_scoreboard)
   
   function new(string name = "f_scoreboard", uvm_component parent);
     super.new(name, parent);
-    item_got_export = new("item_got_export", this);
+    item_got_export1 = new("item_got_export1", this);
+    item_got_export2 = new("item_got_export2", this);
   endfunction
   
   virtual function void build_phase(uvm_phase phase);
