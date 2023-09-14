@@ -1,12 +1,12 @@
 class f_sequence_item extends uvm_sequence_item;
   rand bit i_wren;
   rand bit i_rden;
-  rand bit [7:0] i_wdata;
+  rand bit [127:0] i_wdata;
   bit o_full;
   bit o_empty;
   bit o_alm_full;
   bit o_alm_empty;
-  bit [7:0] o_rdata;
+  bit [127:0] o_rdata;
   
   `uvm_object_utils_begin(f_sequence_item)
   `uvm_field_int(i_wren, UVM_ALL_ON)
